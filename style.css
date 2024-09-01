@@ -1,0 +1,116 @@
+@import url('https://fonts.googleapis.com/css2?family=Handjet&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Handjet&family=Ubuntu&display=swap');
+
+
+
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    width:100%;
+    height: 100%;
+}
+
+body{
+    background-color: var(--backgroundColor);
+    width:100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    transition: ease-in-out .7s;
+}
+
+li{
+    list-style-type: none;
+    user-select: none;
+}
+
+
+#navBar{
+    display: flex;
+    justify-content: space-around;
+    width:100%;
+    /* height: 100px; */
+    /* padding:5px; */
+    padding:5px;
+    font-size: var(--navFontSize);
+    font-family: Ubuntu, serif;
+    color:var(--timeFontColor)
+}
+
+
+#timeBox{
+    display: flex;
+    /* constant */
+    justify-content: center;
+    align-items: center;
+    font-size: var(--timeFontSize);
+    font-family: "Handjet", serif;
+    color: var(--timeFontColor);
+    width:100%;
+    height: 100%;
+}
+
+#currentTime{
+    /* transform: translateY(60%); */
+    /* transition: ease 0.1S; */
+    animation: sparkle infinite ease 4s;
+    user-select: none;
+}
+
+@keyframes sparkle {
+    0%{
+        opacity: 100%;
+    }
+    50%{
+        opacity: 40%;
+    }
+    100%{
+        opacity: 100%;
+    }
+    
+}
+
+.material-symbols-outlined:hover{
+    opacity: 50%;
+    transition: ease-in-out .3s;
+}
+
+#modeBtn{
+    transition:ease-in-out .3s;
+    transform: rotate(0deg);;
+}
+
+#modeBtn:hover{
+    transform: rotate(60deg);
+}
+
+
+/* #currentTime::after{
+    content: var(--ampm);
+} */
+
+#colorChangeBtn{
+    display: none;
+    transition: .3s ease;
+}
+
+#palette{
+    display: none;
+    font-size:40px;
+}
+
+#colorChangeBtn:checked + div{
+    display: block;
+}
+
+#backgroundColor, #fontColor{
+    /* position: absolute;
+    transform: translate(-40px,40px); */
+    visibility: hidden;
+}
